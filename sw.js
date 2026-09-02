@@ -1,5 +1,5 @@
 const CACHE_PREFIX='icar-claw-';
-const CACHE='icar-claw-v13-20260902';
+const CACHE='icar-claw-v14-20260902';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./assets/icon.svg'];
 const APP_URLS=new Set(ASSETS.map(path=>new URL(path,self.registration.scope).href));
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));

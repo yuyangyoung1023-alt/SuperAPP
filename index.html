@@ -150,12 +150,20 @@
     .iGreeting p{margin:4px 0 0;font-size:11px;color:#95a0c6}
     .iGreeting h1::after{content:'';display:block;width:64px;height:2px;margin:7px auto 0;border-radius:2px;background:linear-gradient(90deg,transparent,#9fb4ff7a,transparent)}
     /* ——— 字母 i 语音形象：白帽 + 紫蓝渐变身体 + 闭眼微笑 + 发光光台 + 上升粒子（视频同款） ——— */
-    .iCharacter{position:relative;z-index:5;width:250px;height:100%;min-height:0;border:0;background:transparent;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;transform:translateX(var(--px,0px)) rotate(var(--rot,0deg)) scale(var(--iScale,1));transform-origin:50% 96%;transition:filter .35s ease;will-change:transform}
+    .iCharacter{position:relative;z-index:5;width:250px;height:100%;min-height:0;border:0;background:transparent;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;transform:translateX(var(--px,0px)) scale(var(--sqx,1),var(--sqy,1));transform-origin:50% 94%;transition:filter .35s ease;will-change:transform}
     .iCharacter:hover{filter:brightness(1.09)}
     .iCharacter:active{filter:brightness(.95)}
     .iCharInner{position:absolute;left:50%;bottom:46px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:v14Float 4.2s ease-in-out infinite;will-change:transform}
-    .iDot{width:46px;height:46px;border-radius:50%;position:relative;background:radial-gradient(circle at 34% 28%,#ffffff 0%,#fdfdff 36%,#e6ebff 64%,#c2cdf2 100%);box-shadow:0 6px 15px #2c357466,inset 0 -4px 8px #b7c2e855,inset 0 4px 8px #ffffffd1}
-    .iDot::after{content:'';position:absolute;left:18%;top:14%;width:26%;height:22%;border-radius:50%;background:radial-gradient(closest-side,#fffffff2,transparent);filter:blur(.5px);transform:rotate(-18deg)}
+    .iDot{width:46px;height:46px;border-radius:50%;position:relative;background:radial-gradient(circle at 34% 28%,#ffffff 0%,#fdfdff 36%,#e6ebff 64%,#c2cdf2 100%);box-shadow:0 0 18px #aab8ff59,0 6px 15px #2c357466,inset 0 -4px 8px #b7c2e855,inset 0 4px 8px #ffffffd1}
+    .iDot:after{content:'';position:absolute;right:-5px;top:-3px;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle,#ffffffe8 0%,#ffd76e80 38%,transparent 68%);filter:blur(.4px);animation:v17Sparkle 2.6s ease-in-out infinite}
+    @keyframes v17Sparkle{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.1)}}
+    .iAhoge{position:absolute;left:57%;top:-19px;width:4px;height:21px;border-radius:4px;background:linear-gradient(180deg,#ffd76e,#ff9ff3ab);transform-origin:50% 100%;box-shadow:0 0 8px #ffd76e7d;animation:v17Sway 3.4s ease-in-out infinite}
+    .iAhoge:before{content:'';position:absolute;left:50%;top:-5px;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffffff 0%,#ffd76e 48%,#ff9ff3 100%);box-shadow:0 0 12px #ffd76ecc,0 0 3px #ffffff}
+    @keyframes v17Sway{0%,100%{transform:rotate(-17deg)}50%{transform:rotate(8deg)}}
+    .iBlush{position:absolute;left:0;right:0;top:55px;display:flex;justify-content:center;gap:48px;pointer-events:none}
+    .iBlush i{width:13px;height:7px;border-radius:50%;background:#ff9ff36e;filter:blur(1.4px)}
+    .iPlayBadge{position:absolute;left:50%;bottom:15px;transform:translateX(-50%);width:25px;height:25px;border-radius:50%;background:rgba(255,255,255,.13);border:1.5px solid rgba(255,255,255,.55);display:grid;place-items:center;box-shadow:0 0 12px #ffffff3d,0 0 5px #ffd9a05e;backdrop-filter:blur(2px)}
+    .iPlayBadge:before{content:'';width:0;height:0;border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #ffffffec;margin-left:2.5px;filter:drop-shadow(0 0 3px #ffffffb0)}
     .iStem{width:90px;height:118px;border-radius:45px 45px 42px 42px/58px 58px 50px 50px;position:relative;background:linear-gradient(180deg,#eaeeff 0%,#c4ceff 17%,#aaa6ff 40%,#8d7cf5 62%,#6d55d8 84%,#5835bd 100%);box-shadow:0 18px 44px #4a3ec266,inset 0 3px 10px #ffffff8f,inset 0 -11px 22px #31249c80,inset 5px 0 11px #ffffff36,inset -5px 0 11px #ffffff28}
     .iStem::before{content:'';position:absolute;left:7%;right:7%;bottom:-8px;height:26px;border-radius:50%;background:radial-gradient(closest-side,#c9a0ff80,#b48aff2e 62%,transparent);filter:blur(5px)}
     .iStem::after{content:'';position:absolute;left:15%;top:8%;width:15px;height:32px;border-radius:50%;background:linear-gradient(180deg,#ffffffe6,#ffffff00);filter:blur(1px);transform:rotate(15deg)}
@@ -165,7 +173,19 @@
     .iMouth i{width:12px;height:7px;border:3px solid #ffffffd6;border-top:0;border-radius:0 0 10px 10px}
     @keyframes v14Blink{0%,91.5%,96.5%,100%{transform:scaleY(1)}94%{transform:scaleY(.1)}}
     @keyframes v14Float{50%{transform:translate(-50%,-7px)}}
-    .iAura{position:absolute;left:50%;top:38%;width:360px;height:290px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,#8f7bff38,#6f5cf520 50%,transparent 74%);filter:blur(9px);pointer-events:none;animation:v14Aura 5s ease-in-out infinite}
+    /* ——— V17 果冻弹跳动效：切换时蓄力下蹲→弹起→落地回弹，配合基座涟漪 ——— */
+    .iCharInner.bounce{animation:v17Bounce .82s cubic-bezier(.34,.62,.4,1)}
+    @keyframes v17Bounce{
+      0%{transform:translate(-50%,0) scale(1,1)}
+      16%{transform:translate(-50%,8px) scale(1.1,.8)}
+      42%{transform:translate(-50%,-44px) scale(.93,1.12)}
+      64%{transform:translate(-50%,2px) scale(1.07,.86)}
+      80%{transform:translate(-50%,-13px) scale(.98,1.03)}
+      100%{transform:translate(-50%,0) scale(1,1)}
+    }
+    .iPlatform.ripple:after{content:'';position:absolute;left:50%;bottom:10px;transform:translateX(-50%);width:70px;height:20px;border-radius:50%;border:2px solid #9fb0ffd9;box-shadow:0 0 14px #9fb0ff80;animation:v17Ripple .72s ease-out forwards}
+    @keyframes v17Ripple{from{width:70px;height:19px;opacity:.85}to{width:236px;height:54px;opacity:0}}
+    .iAura{position:absolute;left:50%;top:38%;width:360px;height:290px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,#8f7bff3a,#ff9ff31c 40%,#6f5cf520 62%,transparent 78%);filter:blur(9px);pointer-events:none;animation:v14Aura 5s ease-in-out infinite}
     @keyframes v14Aura{50%{opacity:.55}}
     .iBeams{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);display:flex;gap:30px;align-items:flex-end;pointer-events:none}
     .iBeams i{width:5px;height:140px;border-radius:4px;background:linear-gradient(180deg,#ffffff00,#e6ddff42 55%,#cdb8ff75);filter:blur(3px);animation:v14Beam 3.4s ease-in-out infinite}
@@ -180,7 +200,9 @@
     .iPlatform .pRing b{display:block;width:100%;height:100%;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 12%,#9fb4ff8f 18%,#e8e0ffdc 24%,transparent 32% 60%,#b48aff8f 66%,#e3ccffdc 72%,transparent 80%);-webkit-mask:radial-gradient(circle,transparent 0 56%,#000 57%);mask:radial-gradient(circle,transparent 0 56%,#000 57%);animation:v14Spin 9s linear infinite}
     @keyframes v14Spin{to{transform:rotate(360deg)}}
     .iParticles{position:absolute;left:50%;bottom:38px;width:150px;height:215px;transform:translateX(-50%);pointer-events:none}
-    .iParticles i{position:absolute;bottom:0;width:5px;height:5px;border-radius:50%;background:radial-gradient(circle,#fff,#ffe3b8cc 62%,transparent);box-shadow:0 0 7px #ffe9c0b3;opacity:0;animation:v14Rise 3.8s linear infinite}
+    .iParticles i{position:absolute;bottom:0;width:5px;height:5px;border-radius:50%;background:radial-gradient(circle,#fff,#9ff3ffcc 62%,transparent);box-shadow:0 0 7px #9ff3ffb3;opacity:0;animation:v14Rise 3.8s linear infinite}
+    .iParticles i:nth-child(3n+1){background:radial-gradient(circle,#fff,#ffd76ecc 62%,transparent);box-shadow:0 0 7px #ffe9c0b3}
+    .iParticles i:nth-child(3n+2){background:radial-gradient(circle,#fff,#ff9ff3cc 62%,transparent);box-shadow:0 0 7px #ff9ff3b3}
     .iParticles i:nth-child(1){left:12%;animation-delay:0s;animation-duration:3.6s}
     .iParticles i:nth-child(2){left:24%;animation-delay:1.1s;animation-duration:4.2s}
     .iParticles i:nth-child(3){left:36%;animation-delay:2.3s;animation-duration:3.4s}
@@ -281,7 +303,7 @@
 <body><div class="app">
   <header class="top"><div class="brand">iCAR <b>Claw</b></div><div class="topRight"><span id="clock">09:41</span><span>22°C · 上海</span><button class="topSettings" id="topSettingsBtn" onclick="openSettings('services')" aria-label="打开设置" title="设置"></button><span class="avatar" id="topAvatar">杨</span></div></header>
   <main class="screen">
-    <section class="home carHome" id="home"><div class="iStage"><div class="iGreeting"><h1 id="greeting">早上好，杨先生</h1><p id="homeLead">直接说需求，Claw 能理解并完成多个任务</p></div><button class="iCharacter" id="iAvatar" onclick="startHomeVoice()" aria-label="与语音形象 i 对话，开启 Claw 语音交互" title="点一下，直接说"><span class="iAura" aria-hidden="true"></span><span class="iBeams" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="iCharInner" aria-hidden="true"><span class="iDot"></span><span class="iStem"><span class="iEyes"><i></i><i></i></span><span class="iMouth"><i></i></span></span></span><span class="iPlatform" aria-hidden="true"><i class="pRing"><b></b></i><i class="pBase"></i><i class="pTop"></i></span><span class="iParticles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button><span class="swipeHint iChip" aria-hidden="true"><i class="swipeArrow left">‹</i><b>左右滑动切换</b><i class="swipeArrow right">›</i></span></div><div class="carMain"><div class="zeekrPager" id="zeekrPager" role="region" aria-label="首页内容分页：iCAR趣玩、场景技能、推荐场景、我的场景"><section class="pagerPage" aria-label="第 1 页 · iCAR趣玩"><section class="homePanel skillsPanel funPanel"><div class="panelHead"><div><h2>iCAR趣玩</h2><p>彩蛋、测试与车内氛围，让每次出发都有惊喜</p></div></div><div id="funSkillContent"></div></section></section><section class="pagerPage" aria-label="第 2 页 · 场景技能"><section class="homePanel skillsPanel"><div class="panelHead"><div><h2>场景技能</h2><p>快速了解能力，需要时直接语音体验</p></div></div><div class="skillTabs" id="skillTabs"></div><div id="skillTabContent"></div></section></section><section class="pagerPage" aria-label="第 3 页 · 推荐场景"><section class="homePanel"><div class="panelHead"><div><h2>主动服务 · 推荐场景</h2><p><span id="officialCount">0 个运行中</span> · 推荐场景只读，规则由 iCAR 维护</p></div><button class="link" onclick="openSettings('services')">管理 →</button></div><div class="sceneList" id="officialHomeScenes"></div></section></section><section class="pagerPage" aria-label="第 4 页 · 我的场景"><section class="homePanel"><div class="panelHead"><div><h2>主动服务 · 我的场景</h2><p><span id="customCount">0 个运行中</span> · 先查看详情，需要时再编辑</p></div><span class="headActions"><button class="link create" onclick="createScene()">＋ 创建</button><button class="link" onclick="openSettings('services')">管理 →</button></span></div><div class="sceneList mine" id="customHomeScenes"></div></section></section></div><div class="pagerIndicator" id="pagerIndicator" role="tablist" aria-label="切换首页分页"><button class="pagerDot active" data-target="0" role="tab" aria-selected="true"><span class="dot" aria-hidden="true"></span><span>iCAR趣玩</span></button><button class="pagerDot" data-target="1" role="tab" aria-selected="false"><span class="dot" aria-hidden="true"></span><span>场景技能</span></button><button class="pagerDot" data-target="2" role="tab" aria-selected="false"><span class="dot" aria-hidden="true"></span><span>推荐场景</span></button><button class="pagerDot" data-target="3" role="tab" aria-selected="false"><span class="dot" aria-hidden="true"></span><span>我的场景</span></button></div></div></section>
+    <section class="home carHome" id="home"><div class="iStage"><div class="iGreeting"><h1 id="greeting">早上好，杨先生</h1><p id="homeLead">直接说需求，Claw 能理解并完成多个任务</p></div><button class="iCharacter" id="iAvatar" onclick="startHomeVoice()" aria-label="与语音形象 i 对话，开启 Claw 语音交互" title="点一下，直接说"><span class="iAura" aria-hidden="true"></span><span class="iBeams" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="iCharInner" aria-hidden="true"><span class="iDot"><i class="iAhoge"></i></span><span class="iStem"><span class="iEyes"><i></i><i></i></span><span class="iMouth"><i></i></span><span class="iBlush"><i></i><i></i></span><span class="iPlayBadge" title="Born to Play"></span></span></span><span class="iPlatform" aria-hidden="true"><i class="pRing"><b></b></i><i class="pBase"></i><i class="pTop"></i></span><span class="iParticles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button><span class="swipeHint iChip" aria-hidden="true"><i class="swipeArrow left">‹</i><b>左右滑动切换</b><i class="swipeArrow right">›</i></span></div><div class="carMain"><div class="zeekrPager" id="zeekrPager" role="region" aria-label="首页内容分页：iCAR趣玩、场景技能、推荐场景、我的场景"><section class="pagerPage" aria-label="第 1 页 · iCAR趣玩"><section class="homePanel skillsPanel funPanel"><div class="panelHead"><div><h2>iCAR趣玩</h2><p>彩蛋、测试与车内氛围，让每次出发都有惊喜</p></div></div><div id="funSkillContent"></div></section></section><section class="pagerPage" aria-label="第 2 页 · 场景技能"><section class="homePanel skillsPanel"><div class="panelHead"><div><h2>场景技能</h2><p>快速了解能力，需要时直接语音体验</p></div></div><div class="skillTabs" id="skillTabs"></div><div id="skillTabContent"></div></section></section><section class="pagerPage" aria-label="第 3 页 · 推荐场景"><section class="homePanel"><div class="panelHead"><div><h2>主动服务 · 推荐场景</h2><p><span id="officialCount">0 个运行中</span> · 推荐场景只读，规则由 iCAR 维护</p></div><button class="link" onclick="openSettings('services')">管理 →</button></div><div class="sceneList" id="officialHomeScenes"></div></section></section><section class="pagerPage" aria-label="第 4 页 · 我的场景"><section class="homePanel"><div class="panelHead"><div><h2>主动服务 · 我的场景</h2><p><span id="customCount">0 个运行中</span> · 先查看详情，需要时再编辑</p></div><span class="headActions"><button class="link create" onclick="createScene()">＋ 创建</button><button class="link" onclick="openSettings('services')">管理 →</button></span></div><div class="sceneList mine" id="customHomeScenes"></div></section></section></div><div class="pagerIndicator" id="pagerIndicator" role="tablist" aria-label="切换首页分页"><button class="pagerDot active" data-target="0" role="tab" aria-selected="true"><span class="dot" aria-hidden="true"></span><span>iCAR趣玩</span></button><button class="pagerDot" data-target="1" role="tab" aria-selected="false"><span class="dot" aria-hidden="true"></span><span>场景技能</span></button><button class="pagerDot" data-target="2" role="tab" aria-selected="false"><span class="dot" aria-hidden="true"></span><span>推荐场景</span></button><button class="pagerDot" data-target="3" role="tab" aria-selected="false"><span class="dot" aria-hidden="true"></span><span>我的场景</span></button></div></div></section>
     <section class="settings" id="settings"><aside class="side"><button class="ghost back" onclick="goHome()">← 返回首页</button><div class="sideTitle">CLAW 设置</div><button class="item" data-page="services" onclick="showPage('services')">主动服务</button><button class="item" data-page="memory" onclick="showPage('memory')">我的记忆</button><button class="item" data-page="voice" onclick="showPage('voice')">语音与唤醒</button><button class="item" data-page="personal" onclick="showPage('personal')">角色引擎</button><button class="item" data-page="privacy" onclick="showPage('privacy')">账号、隐私与权限</button></aside><div class="content">
       <div class="page" id="page-services"><div class="pageTitle"><div><h1>主动服务</h1><p>按类型查看，管理 Claw 什么时候主动帮你</p></div><button class="primary" onclick="createScene()">＋ 创建场景</button></div><div id="serviceNotice"></div><section class="serviceManagerBar"><div class="serviceManagerCopy"><span class="icon serviceFilterIcon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M8 14v6"/></svg></span><div><h2>按类型管理</h2><p>选择标签，只看与当前需求相关的主动服务</p></div></div><div class="serviceCategoryTabs" id="serviceCategoryTabs"></div><div class="serviceFilterSummary" id="serviceFilterSummary"></div></section><div class="block serviceSection" id="activeServicesBlock"><div class="serviceSectionHead"><div><h2>正在为你服务</h2><p>已经开启，命中条件后会主动出现</p></div><span id="activeServicesCount"></span></div><div class="serviceGrid" id="activeServices"></div></div><div class="block serviceSection" id="recommendationsBlock"><div class="serviceSectionHead"><div><h2>推荐给你</h2><p>由 iCAR 维护，可查看规则并按需开启</p></div><span id="recommendationsCount"></span></div><div class="serviceGrid" id="recommendations"></div></div><div class="block serviceSection" id="myScenesBlock"><div class="serviceSectionHead"><div><h2>我的场景</h2><p>你创建的规则，可查看、开关或进入语音编辑</p></div><span id="myScenesCount"></span></div><div class="serviceGrid" id="myScenes"></div></div></div>
       <div class="page" id="page-memory"><div class="pageTitle"><div><h1>我的记忆</h1><p>这些理解帮助 Claw 更懂你</p></div><div><button class="secondary" id="batchBtn" onclick="toggleBatch()">批量管理</button> <button class="danger" onclick="clearAllMemory()">清空全部</button></div></div><div id="memoryGate"></div><div id="memoryContent"><div class="block"><h2>Claw 最近记住了这些</h2><div class="cards" id="recentMemory"></div></div><div class="block"><h2>按类型查看</h2><div class="memoryTabs" id="memoryTabs"></div><div class="memoryList" id="memoryList"></div><div class="actions hidden" id="batchActions"><button class="ghost" onclick="selectVisible()">全选当前类型</button><button class="ghost" onclick="toggleBatch()">取消</button><button class="danger" onclick="deleteSelected()">删除所选</button></div></div></div></div>
@@ -1234,24 +1256,32 @@ document.getElementById('modalWrap').onclick=e=>{if(e.target.id==='modalWrap')cl
   const maxIdx=pages.length-1;
   let current=-1,enterTimer=null;
   const idxFromScroll=()=>Math.max(0,Math.min(maxIdx,Math.round(pager.scrollLeft/pager.clientWidth)));
-  let lean=0,leanVel=0,squash=1,squashVel=0,lastSL=pager.scrollLeft,physOn=false;
+  let lean=0,leanVel=0,squish=0,squishVel=0,lastSL=pager.scrollLeft,physOn=false;
   const setAvatarVars=()=>{
     if(!avatar)return;
-    avatar.style.setProperty('--px',(-lean*54).toFixed(1)+'px');
-    avatar.style.setProperty('--rot',(-lean*11).toFixed(2)+'deg');
-    avatar.style.setProperty('--iScale',squash.toFixed(3));
+    avatar.style.setProperty('--px',(-lean*16).toFixed(1)+'px');
+    avatar.style.setProperty('--sqx',(1+squish).toFixed(3));
+    avatar.style.setProperty('--sqy',(1-squish*.7).toFixed(3));
   };
   const physTick=()=>{
     const sl=pager.scrollLeft,v=sl-lastSL;lastSL=sl;
-    const target=Math.max(-1,Math.min(1,v/30));
-    leanVel+=(target-lean)*.16;leanVel*=.78;lean+=leanVel;
-    squashVel+=(1-squash)*.2;squashVel*=.7;squash+=squashVel;
+    const leanTarget=Math.max(-1,Math.min(1,v/34));
+    leanVel+=(leanTarget-lean)*.14;leanVel*=.8;lean+=leanVel;
+    const sqTarget=Math.max(-1,Math.min(1,Math.abs(v)/26))*.16;
+    squishVel+=(sqTarget-squish)*.22;squishVel*=.72;squish+=squishVel;
     setAvatarVars();
-    if(Math.abs(lean)>.003||Math.abs(leanVel)>.003||Math.abs(squash-1)>.003||Math.abs(squashVel)>.003||Math.abs(v)>.4)requestAnimationFrame(physTick);
-    else{physOn=false;lean=0;squash=1;setAvatarVars()}
+    if(Math.abs(lean)>.003||Math.abs(leanVel)>.003||Math.abs(squish)>.003||Math.abs(squishVel)>.003||Math.abs(v)>.4)requestAnimationFrame(physTick);
+    else{physOn=false;lean=0;squish=0;setAvatarVars()}
   };
   const physStart=()=>{if(!physOn){physOn=true;lastSL=pager.scrollLeft;requestAnimationFrame(physTick)}};
-  const kickAvatar=dir=>{if(!avatar)return;leanVel+=dir*.22;squash=1.06;physStart()};
+  const kickAvatar=dir=>{
+    if(!avatar)return;
+    squish=.13;squishVel=-.06;physStart();
+    const inner=avatar.querySelector('.iCharInner');
+    if(inner){inner.classList.remove('bounce');void inner.offsetWidth;inner.classList.add('bounce')}
+    const plat=avatar.querySelector('.iPlatform');
+    if(plat){plat.classList.remove('ripple');void plat.offsetWidth;plat.classList.add('ripple')}
+  };
   function setActive(idx,animate){
     if(idx===current||!pages[idx])return;
     if(current>-1)kickAvatar(Math.sign(idx-current));
